@@ -2,6 +2,8 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -25,7 +27,23 @@ module.exports = {
           { loader: "css-loader" },
           { loader: "sass-loader" },
         ],
-      },
+      },      
+      // {
+      //   test: /icons\/.*.svg$/,
+      //   loader: 'svg-sprite-loader',
+      //   options: {
+      //     extract: true,
+      //     spriteFilename: './images/sprite.svg',
+      //     runtimeCompat: true
+      //   }
+      // },
+      {
+         test: /\.(png|jpe?g|gif)$/i,
+         loader: 'file-loader',
+         options:{
+           outputPath: 'images'
+         }
+      }
     ],
   },
   plugins: [
@@ -36,6 +54,18 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "bundle.css",
     }),
+    new SpriteLoaderPlugin({
+      plainSprite: true
+    }),
+    new CleanWebpackPlugin({
+      // Simulate the removal of files
+      dry: true,
+      // Write Logs to Console
+      verbose: true,
+      // Automatically remove all unused webpack assets on rebuild
+      cleanStaleWebpackAssets: true,
+      protectWebpackAssets: false
+    })
   ],
   devServer: {
     contentBase: path.join(__dirname, "dist"),
