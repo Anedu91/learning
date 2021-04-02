@@ -1,0 +1,40 @@
+.main{
+  margin-top: 6.125*$spacer;  
+  height: calc(100vh -  6.125rem);  
+  padding: 0;
+  display: grid;  
+  grid-template-columns: 50% 1fr;
+  overflow: hidden;
+  gap: 2*$spacer;
+  &__section{
+    padding: $spacer;
+  }
+ 
+  &__document{
+    display: flex;
+    flex-direction: column;
+    background: $gray-300;
+    border-radius: $spacer;
+    box-shadow: $box-shadow;
+  }
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__body{
+    flex: 1;
+  }
+  &__footer{
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__assignment{
+    height: 100%;
+    background: $white;    
+    border-radius: $spacer;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $box-shadow;
+  }
+}

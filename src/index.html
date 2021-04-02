@@ -7,12 +7,266 @@
   <title>Template</title>
 </head>
 <body>
-  <p>
-    <svg>
-      <use xlink:href="./images/sprite.svg#icon-x"></use>
-    </svg>
-  </p>
-  <h1>Hello</h1>
-  <h2>hello again</h2>
+  <div id="app">
+    <nav id="topbar" class="navigation bg-primary">
+      <div class="container">
+        <!-- STUDENT INFORMATION -->
+        <div class="navigation__student">
+          <figure class="navigation__avatar"></figure>
+          <p data-bs-toggle="tooltip" data-bs-placement="bottom" title="John Doe Jhonson">
+            Jhon Doe
+          </p>
+          <p data-bs-toggle="tooltip" data-bs-placement="bottom" title="English 101"> 
+            Eng 101
+          </p>
+          <p>
+           3
+          </p>
+        </div>
+  
+        <ul class="navigation__nav">
+          <!-- EVALUATION INFORMATION -->
+          <li class="navigation__item dropdown">
+            <button class="dropdown-toggle navigation__dropdown-button" type="button" id="evaluated-score" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="score">
+                Evaluated <span class="score__number">10/20</span>  
+                <div class="score__progress" data-pct="35" data-bs-toggle="tooltip" data-bs-placement="bottom" title="20 / 20 pt">
+                  <svg class="score__icon" width="40" height="40" viewPort="0 0 20 20" version="1.1">
+                    <circle class="score__circle" r="17" cx="20" cy="20" fill="transparent" stroke-dasharray="106.76" stroke-dashoffset="0"></circle>
+                    <circle class="score__bar" r="17" cx="20" cy="20" fill="transparent" stroke-dasharray="88.664" stroke-dashoffset="0"></circle>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="evaluated-score">
+              <li class="dropdown-item navigation__dropdown-item">
+                <div class="score">
+                  Graded 
+                  <span class="score__number">10/20</span>  
+                  <div class="score__progress" data-pct="35" data-bs-toggle="tooltip" data-bs-placement="bottom" title="20 / 20 pt">
+                    <svg class="score__icon" width="40" height="40" viewPort="0 0 20 20" version="1.1">
+                      <circle class="score__circle" r="17" cx="20" cy="20" fill="transparent" stroke-dasharray="125.664" stroke-dashoffset="0"></circle>
+                      <circle class="score__bar" r="17" cx="20" cy="20" fill="transparent" stroke-dasharray="100.664" stroke-dashoffset="0"></circle>
+                    </svg>
+                </div>
+              </div>
+              </li>
+            </ul>
+          </li>
+
+           <!-- EVALUATION INFORMATION -->
+           <li class="navigation__item dropdown">
+            <button class="dropdown-toggle navigation__dropdown-button lg" type="button" id="submitted-graded" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="score">
+                Submitted graded <span class="score__number">2</span>  
+                
+              </div>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="submitted-graded">
+              <li class="dropdown-item navigation__dropdown-item">
+                <div class="score">
+                  Average 
+                  <span class="score__number">10/20</span>  
+                  <div class="score__progress" data-pct="35" data-bs-toggle="tooltip" data-bs-placement="bottom" title="20 / 20 pt">
+                    <svg class="score__icon" width="40" height="40" viewPort="0 0 20 20" version="1.1">
+                      <circle class="score__circle" r="17" cx="20" cy="20" fill="transparent" stroke-dasharray="125.664" stroke-dashoffset="0"></circle>
+                      <circle class="score__bar" r="17" cx="20" cy="20" fill="transparent" stroke-dasharray="100.664" stroke-dashoffset="0"></circle>
+                    </svg>
+                </div>
+              </div>
+              </li>
+            </ul>
+          </li>
+  
+          <!-- GRADING ASSIGNMENT -->
+          <li class="navigation__item btn-group">
+            <button class="btn btn-custom teacherGraded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Teacher graded">
+              <svg class="btn-icon--wide"><use xlink:href="images/sprite.svg#icon-graded"></use></svg>
+            </button>
+            <button class="btn btn-custom computerGraded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Computer graded">
+              <svg class="btn-icon--wide"><use xlink:href="images/sprite.svg#icon-evaluated"></use></svg>
+            </button>
+          </li>
+          <!-- FILTER SHOW ASSIGNMENT BUTTONS -->
+          <li class="navigation__item dropdown">
+            <button class="dropdown-toggle navigation__dropdown-button" type="button" id="evaluated-score" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg class="btn-icon--wide"><use xlink:href="images/sprite.svg#icon-view-dropdown"></use></svg>
+            </button>
+            <ul class="dropdown-menu navigaton__dropdown-filter" aria-labelledby="evaluated-score">
+              <li class="dropdown-item navigation__dropdown-item btn-group">
+                <input type="radio" class="btn-check btn-filter" name="showfilter" id="showAll" checked>
+                <label class="btn" for="showAll" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Show all assignment">
+                  <svg class="btn-icon--wide md"><use xlink:href="images/sprite.svg#icon-view-all"></use></svg>
+                </label>  
+  
+                <input type="radio" class="btn-check btn-filter" name="showfilter" id="show0">
+                <label class="btn" for="show0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Show assignment with 0 score">
+                  <svg class="btn-icon--wide sm"><use xlink:href="images/sprite.svg#icon-view-0"></use></svg>
+                </label>    
+  
+                <input type="radio" class="btn-check btn-filter" name="showfilter" id="showUnder">
+                <label class="btn" for="showUnder" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Show assignment less than 100">
+                  <svg class="btn-icon--wide lg"><use xlink:href="images/sprite.svg#icon-view-under"></use></svg>
+                </label>
+              </li>
+            </ul>
+          </li>
+  
+          <!-- RUNNING SCORE INFO -->
+          <li class="navigation__item d-flex">            
+              Running score            
+            <div id="running-score">
+                <div class="score__progress" data-pct="35" data-bs-toggle="tooltip" data-bs-placement="bottom" title="20 / 20 pt">
+                  <svg class="score__icon" width="40" height="40" viewPort="0 0 20 20" version="1.1">
+                    <circle class="score__circle" r="17" cx="20" cy="20" fill="transparent" stroke-dasharray="106.76" stroke-dashoffset="0"></circle>
+                    <circle class="score__bar" r="17" cx="20" cy="20" fill="transparent" stroke-dasharray="88.664" stroke-dashoffset="0"></circle>
+                  </svg>
+                </div>
+            </div>    
+          </li>
+  
+          <!-- POSTING ASSIGNMENT -->
+          <li class="navigation__item btn-group">
+            <button class="btn btn-custom feedback" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Submit as a feedback">
+              <svg class="btn-icon"><use xlink:href="images/sprite.svg#icon-feedback"></use></svg>
+            </button>
+            <button class="btn btn-custom finish" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Submit as complete">
+              <svg class="btn-icon"><use xlink:href="images/sprite.svg#icon-complete"></use></svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container main">
+      <section class="main__section main__document">
+        <div class="main__header">
+          <h2>Document Title</h2>
+          <div class="navigation__item">
+            <button class="btn text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Teacher graded">
+              <svg class="btn-icon"><use xlink:href="images/sprite.svg#icon-calendar"></use></svg>
+            </button>
+            <button class="btn btn-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Computer graded">
+              <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-preview"></use></svg>
+            </button>
+            <button class="btn btn-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Teacher graded">
+              <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-edit"></use></svg>
+            </button>
+            <button class="btn btn-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Computer graded">
+              <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-expand"></use></svg>
+            </button>
+          </div>
+        </div>
+        <div class="main__body"></div>
+        <div class="main__footer">
+          <div class="btn-group">
+            <button class="btn btn-primary text-white btn-rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Teacher graded">
+              <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-minus"></use></svg>
+            </button>
+            <span class="btn-primary text-white btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Computer graded">
+              50
+            </span>
+            <button class="btn btn-primary text-white btn-rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Teacher graded">
+              <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-plus"></use></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      
+      <section class="main__section main__assignment">
+        <h2 class="text-center text-primary">Assignment Name</h2>
+        <ul id="assignment" class="assignment">
+          <li class="card graded">
+            <button class="card__btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <div class="card__info">
+                <span class="card__score">0/10</span>
+                <h5 class="card__title">Task x/x</h5>
+                <a class="btn btn-circle">
+                  <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-cart"></use></svg>
+                </a>
+              </div>
+              <div class="card-body card__description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, consequuntur.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, impedit!
+                </p>
+              </div>
+            </button>
+            <div class="collapse show" id="collapseExample">
+              <div class="card-body">
+                <div class="card__action">
+                  <div class="card__container">
+                    <button class="btn btn-outline btn-large">0</button>
+                    <button class="btn btn-primary btn-large">10</button>
+                  </div>
+                  <div class="mt-3 card__container">
+                    <div class="input-group shadow">
+                      <span class="input-group-text" id="basic-addon1">5</span>
+                      <input type="range" class="form-range" min="0" max="5" step="1">
+                    </div>
+                    <button class="btn btn-circle">
+                      <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-cart"></use></svg>
+                    </button>
+                  </div>
+                  <div class="mt-3">
+                      <button class="btn btn-danger w-100 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#failure-message" aria-expanded="false" aria-controls="failure message">Failure Message</button>
+                      <div class="collapse mt-2 show" id="failure-message">
+                        <div class="alert alert-danger" role="alert">
+                          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>          
+          <li class="card">
+            <button class="card__btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <div class="card__info">
+                <span class="card__score">0/10</span>
+                <h5 class="card__title">Task x/x</h5>
+                <a class="btn btn-circle">
+                  <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-cart"></use></svg>
+                </a>
+              </div>
+              <div class="card-body card__description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, consequuntur.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, impedit!
+                </p>
+              </div>
+            </button>
+            <div class="collapse show" id="collapseExample">
+              <div class="card-body">
+                <div class="card__action">
+                  <div class="card__container">
+                    <button class="btn btn-outline btn-large">0</button>
+                    <button class="btn btn-primary btn-large">10</button>
+                  </div>
+                  <div class="mt-3 card__container">
+                    <div class="input-group shadow">
+                      <span class="input-group-text" id="basic-addon1">5</span>
+                      <input type="range" class="form-range" min="0" max="5" step="1">
+                    </div>
+                    <button class="btn btn-circle">
+                      <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-cart"></use></svg>
+                    </button>
+                  </div>
+                  <div class="mt-3">
+                      <button class="btn btn-danger w-100 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#failure-message" aria-expanded="false" aria-controls="failure message">Failure Message</button>
+                      <div class="collapse mt-2 show" id="failure-message">
+                        <div class="alert alert-danger" role="alert">
+                          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
 </body>
 </html>

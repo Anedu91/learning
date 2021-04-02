@@ -1,0 +1,7 @@
+// scss-docs-start alert-variables
+$alert-padding-y:               $spacer/2;
+$alert-margin-bottom:           0;
+$alert-border-radius:           3*$border-radius;
+// scss-docs-end alert-variables
+
+@import "~bootstrap/scss/alert";

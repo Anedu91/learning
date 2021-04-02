@@ -1,0 +1,114 @@
+/*BUTTONS VARIABLES*/
+// scss-docs-start btn-variables
+$btn-border-width:            0;
+$btn-focus-width:             0;
+$btn-focus-box-shadow:        0;
+$btn-active-box-shadow:       0;
+$btn-border-radius:           3*$border-radius;
+// scss-docs-end btn-variables
+
+
+
+/*IMPORTING BOOTSTRAP COMPONENTS*/
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/buttons";
+
+/*EXTRA CUSTOM STYLES*/
+
+
+.btn-filter {
+  & + .btn{
+    color: $secondary;  
+  }
+  &:hover + .btn{
+    color: $primary;
+  }
+  &:checked + .btn {
+    color: $primary;
+  }
+}
+.btn-custom{
+  color: $white;
+
+  &:hover{
+    color: shift-color($white, 30%);;
+  }
+}
+.btn-circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $primary;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  color: $white;
+  &:not(:last-child){
+    margin-right: 1rem;
+  }
+  
+}
+.btn-rounded{
+  border-radius: 3*$spacer;
+}
+.btn-large{
+  flex: 1;  
+  font-weight: 700;
+  color: $white;
+  &:hover{
+    color: $white;
+  }
+}
+.btn-outline{
+  border: 1px solid $primary;
+  color: $primary;
+  font-weight: 700;
+  &:hover{
+    background: $primary;
+    color: $white;
+  }
+}
+.btn-range{
+  background: $white;
+  color: $gray-600;
+  &:hover{
+    color: $primary;
+  }
+}
+
+
+
+%icon-pattern{
+  fill: currentColor;
+  pointer-events: none;
+}
+
+.btn-icon{
+  @extend %icon-pattern;
+  width: 1.8rem;
+  height: 1.8rem;
+
+  &--small{
+    @extend %icon-pattern;
+    width: 1rem;
+    height: 1rem;
+  }
+  &--wide{
+    @extend %icon-pattern;
+    width: 3.2rem;
+    height: 2.2rem;
+    &.lg{
+      width: 3.8rem;
+      height: 3rem;
+    }
+    &.md{
+      width: 3.2rem;
+      height: 2rem;
+    }
+    &.sm{
+      width: 2.4rem;
+      height: 2rem;
+    }
+  }
+}

@@ -1,4 +1,42 @@
-@import "./abstracts/mixins";
-@import "./abstracts/variables";
-/*VENDORS*/
-@import "~bootstrap/scss/bootstrap";
+// 1. Include bootstrap functions first
+@import "~bootstrap/scss/functions";
+
+// 2. My custom variables
+@import "./abstracts/custom-variables";
+
+// 3. Bootstrap variables and mixins
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// 4. Bootstrap core components
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/bootstrap-utilities";
+@import "~bootstrap/scss/transitions";
+
+
+
+/*BASE*/
+@import "./abstracts/base";
+
+
+/*COMPONENTS*/
+@import "./components/alert";
+@import "./components/assignment";
+@import "./components/button";
+@import "./components/card";
+@import "./components/circle";
+@import "./components/dropdown";
+@import "./components/form";
+@import "./components//icon";
+@import "./components/navigation";
+@import "./components/score";
+@import "./components/tooltip";
+
+
+/*LAYOUT*/
+@import "./layout/main";

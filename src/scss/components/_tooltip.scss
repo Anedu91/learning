@@ -1,0 +1,20 @@
+// scss-docs-start tooltip-variables
+$tooltip-font-size:                 $font-size-sm !default;
+$tooltip-max-width:                 200px !default;
+$tooltip-color:                     $black;
+$tooltip-bg:                        $white;
+$tooltip-border-radius:             $border-radius*2;
+$tooltip-opacity:                   1;
+$tooltip-padding-y:                 $spacer / 4 !default;
+$tooltip-padding-x:                 $spacer / 2 !default;
+$tooltip-margin:                    0 !default;
+
+$tooltip-arrow-width:               .8rem !default;
+$tooltip-arrow-height:              .4rem !default;
+$tooltip-arrow-color:               $tooltip-bg;
+// scss-docs-end tooltip-variables
+
+@import "~bootstrap/scss/tooltip";
+
+/*CUSTOM STYLES*/
+

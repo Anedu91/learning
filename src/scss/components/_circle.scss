@@ -1,0 +1,27 @@
+.circle{
+  position: relative;
+  margin-left: 1rem;
+  &__icon{
+    margin-left: auto;
+    circle{
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+    stroke-width: .25rem;
+    }
+  }
+  &__circle{    
+    stroke: #666;
+  }
+  &__bar{
+    stroke: #FF9F1E;
+  }
+  &:before{
+    content:attr(data-pct)"%";
+    font-size: .6rem;
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+}

@@ -1,0 +1,39 @@
+.score{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+  &__number{
+    margin-left: .5rem;
+    margin-right: auto;
+  }
+  &__progress{
+    position: relative;
+    margin-left: .5rem; 
+   
+    &:before{
+      content:attr(data-pct)"%";
+      font-size: .6rem;
+      position: absolute;
+      display: block;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+  &__icon{
+    margin-left: auto;
+    
+    circle{
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+    stroke-width: .25rem;
+    }
+  }
+  &__circle{    
+    stroke: $blue-200
+  }
+  &__bar{
+    stroke: currentColor;
+  }
+}

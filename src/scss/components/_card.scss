@@ -1,0 +1,100 @@
+// scss-docs-start card-variables
+$card-spacer-y:                     .75*$spacer;
+$card-spacer-x:                     3.5*$spacer;
+$card-border-width:                 0;
+$card-border-radius:                $spacer*1.5;
+// scss-docs-end card-variables
+@import "~bootstrap/scss/card";
+
+
+/*CUSTOM STYLES*/
+
+.card{
+  padding: $spacer;
+  color: $primary;
+  background: $blue-100;
+  &__btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    color: inherit;
+    border: none;
+    background: transparent;
+  }
+  &__info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__score{
+    font-size: 1.35*$spacer;
+    font-weight: 700;
+    color: currentColor;
+  }
+  &__title{
+    color: currentColor;
+  }
+  &__description{
+    text-align: left;
+    color: $black;
+    height: auto;
+  }
+  &__action{
+    border-top: 1px solid $primary;
+    padding: $spacer 2*$spacer 0;
+    
+  }
+  &__container{
+    display: flex;
+    align-items: center;
+    &>*:not(:last-child){
+      margin-right: $spacer;
+    }
+  }
+
+  &.active{
+    color: $primary;
+  }  
+  &.graded{
+    background: $teal;
+  }
+  &__toggle{
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='#{$white}'><rect x='0.2' y='7.6' width='17.7' height='2.7'/><rect x='0.1' y='7.6' transform='matrix(5.133065e-14 1 -1 5.133065e-14 17.8626 1.648352e-02)' width='17.7' height='2.7'/></svg>"));
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  /* Collapsing events */
+  &__btn[aria-expanded="false"]{
+    color: $gray-500;
+    &:hover{
+      color: $primary;
+      .card__description{
+        color: $black;
+      }
+    }
+  }
+
+  &__btn[aria-expanded="false"] &__description{
+    overflow: hidden;
+    height: 4rem;
+    color: $gray-500;
+  }
+  &__btn[aria-expanded="true"] &__toggle{
+    &:before{
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 2.9' fill='#{$white}'><rect x='0.1' y='0.1' width='17.7' height='2.7'/></svg>"));
+    }
+  }
+  
+}

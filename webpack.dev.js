@@ -16,6 +16,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
+            plugins: ["@babel/transform-runtime"]
           },
         },
       },
@@ -31,7 +32,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/i,
         loader: 'file-loader',
         options:{
-          name: "[name].[hash].[ext]",
+          name: "[name].[ext]",
           publicPath : "images",
           outputPath: "images"
         }

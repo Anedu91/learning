@@ -1,0 +1,80 @@
+.navigation{
+  position: fixed;
+  top: 0;
+  display: flex;
+  padding: $spacer 0;
+  width: 100%;
+  color: $white;
+  .container{
+    display: flex;
+    align-items: center;
+  }
+  &__student{
+    display: flex;
+    p{
+      margin-bottom: 0;
+      &:not(:last-child){
+        margin-right: 1rem;
+      }
+    }
+  }
+  &__nav{
+    margin-left: auto;
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;    
+  }
+  &__item{
+    display: flex;
+    align-items: center;
+    &:not(:last-child){
+      margin-right: $spacer/2;
+    }
+  }
+  &__dropdown-button{
+    position: relative;    
+    background: none;
+    border: none;
+    padding: .5rem 1.25rem .5rem .75rem;
+    color: $white;
+    
+    &.lg{
+      min-width: 12.5*$spacer;
+    }
+    &::after{
+      position: absolute;
+      right: .25rem;
+      top: 50%;
+      transform: translateY(-50%);
+
+    }
+    &[aria-expanded="true"]{
+      background:$white;
+        color: $primary;
+        border-radius: 1rem 1rem 0 0;
+        
+        &::before{
+          content: '';
+          width: 100%;
+          height: $spacer;
+          position: absolute;
+          bottom: -$spacer;
+          left: 0;
+          background: $white;
+        }
+    }
+   
+  }
+  &__dropdown-item{
+    padding-right: 1.25rem;
+    color: $primary;
+    &:hover{
+      background: none;
+      color: $primary;
+    }
+  }
+  &__dropdown-filter{
+    transform: translate(0px, calc(56px + $spacer));
+  }
+}
