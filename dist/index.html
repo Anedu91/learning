@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template</title>
+<script defer src="main.js"></script><link href="bundle.css" rel="stylesheet"></head>
+<body>
+  <div id="app">
+    <nav id="topbar" class="navigation bg-primary">
+      
+    </nav>
+
+    <main class="container main">
+      <section class="main__section main__document">
+        <div class="main__header">
+          <h2>Document Title</h2>
+          <div class="navigation__item">
+            <button class="btn text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Teacher graded">
+              <svg class="btn-icon"><use xlink:href="images/sprite.svg#icon-calendar"></use></svg>
+            </button>
+            <button class="btn btn-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Computer graded">
+              <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-preview"></use></svg>
+            </button>
+            <button class="btn btn-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Teacher graded">
+              <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-edit"></use></svg>
+            </button>
+            <button class="btn btn-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Computer graded">
+              <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-expand"></use></svg>
+            </button>
+          </div>
+        </div>
+        <div class="main__body"></div>
+        <div class="main__footer">
+          <div class="btn-group">
+            <button class="btn btn-primary text-white btn-rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Teacher graded">
+              <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-minus"></use></svg>
+            </button>
+            <span class="btn-primary text-white btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Computer graded">
+              50
+            </span>
+            <button class="btn btn-primary text-white btn-rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Teacher graded">
+              <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-plus"></use></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      
+      <section class="main__section main__assignment">
+        <h2 class="text-center text-primary">Assignment Name</h2>
+        <ul id="assignment" class="assignment">
+          <li class="card graded">
+            <button class="card__btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <div class="card__info">
+                <span class="card__score">0/10</span>
+                <h5 class="card__title">Task x/x</h5>
+                <a class="btn btn-circle">
+                  <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-cart"></use></svg>
+                </a>
+              </div>
+              <div class="card-body card__description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, consequuntur.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, impedit!
+                </p>
+              </div>
+            </button>
+            <div class="collapse show" id="collapseExample">
+              <div class="card-body">
+                <div class="card__action">
+                  <div class="card__container">
+                    <button class="btn btn-outline btn-large">0</button>
+                    <button class="btn btn-primary btn-large">10</button>
+                  </div>
+                  <div class="mt-3 card__container">
+                    <div class="input-group shadow">
+                      <span class="input-group-text" id="basic-addon1">5</span>
+                      <input type="range" class="form-range" min="0" max="5" step="1">
+                    </div>
+                    <button class="btn btn-circle">
+                      <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-cart"></use></svg>
+                    </button>
+                  </div>
+                  <div class="mt-3">
+                      <button class="btn btn-danger w-100 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#failure-message" aria-expanded="false" aria-controls="failure message">Failure Message</button>
+                      <div class="collapse mt-2 show" id="failure-message">
+                        <div class="alert alert-danger" role="alert">
+                          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>          
+          <li class="card">
+            <button class="card__btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <div class="card__info">
+                <span class="card__score">0/10</span>
+                <h5 class="card__title">Task x/x</h5>
+                <a class="btn btn-circle">
+                  <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-cart"></use></svg>
+                </a>
+              </div>
+              <div class="card-body card__description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, consequuntur.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, impedit!
+                </p>
+              </div>
+            </button>
+            <div class="collapse show" id="collapseExample">
+              <div class="card-body">
+                <div class="card__action">
+                  <div class="card__container">
+                    <button class="btn btn-outline btn-large">0</button>
+                    <button class="btn btn-primary btn-large">10</button>
+                  </div>
+                  <div class="mt-3 card__container">
+                    <div class="input-group shadow">
+                      <span class="input-group-text" id="basic-addon1">5</span>
+                      <input type="range" class="form-range" min="0" max="5" step="1">
+                    </div>
+                    <button class="btn btn-circle">
+                      <svg class="btn-icon btn-icon--small"><use xlink:href="images/sprite.svg#icon-cart"></use></svg>
+                    </button>
+                  </div>
+                  <div class="mt-3">
+                      <button class="btn btn-danger w-100 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#failure-message" aria-expanded="false" aria-controls="failure message">Failure Message</button>
+                      <div class="collapse mt-2 show" id="failure-message">
+                        <div class="alert alert-danger" role="alert">
+                          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
