@@ -26,6 +26,7 @@ $card-border-radius:                $spacer*1.5;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    pointer-events: none;
   }
   &__score{
     font-size: 1.35*$spacer;
@@ -39,6 +40,7 @@ $card-border-radius:                $spacer*1.5;
     text-align: left;
     color: $black;
     height: auto;
+    pointer-events: none;
   }
   &__action{
     border-top: 1px solid $primary;

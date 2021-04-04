@@ -9,7 +9,7 @@
   }
   &__progress{
     position: relative;
-    margin-left: .5rem; 
+    margin-left: .5rem;    
    
     &:before{
       content:attr(data-pct)"%";
@@ -25,7 +25,6 @@
     margin-left: auto;
     
     circle{
-    stroke-dashoffset: 0;
     transition: stroke-dashoffset 1s linear;
     stroke-width: .25rem;
     }
