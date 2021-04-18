@@ -1,5 +1,5 @@
 .navigation{
-  position: fixed;
+  position: sticky;
   top: 0;
   display: flex;
   padding: $spacer 0;
@@ -29,7 +29,18 @@
     display: flex;
     align-items: center;
     &:not(:last-child){
-      margin-right: $spacer/2;
+      margin-right: $spacer;
+    }
+    &--score{
+      background: $white;
+      color: $primary;
+      border-radius: $spacer;
+      padding: 0 $spacer*1.25;
+    }
+    &--space{
+      & > *:not(:last-child){
+        margin-right: $spacer/2;
+      }
     }
   }
   &__dropdown-button{
@@ -76,5 +87,17 @@
   }
   &__dropdown-filter{
     transform: translate(0px, calc(56px + $spacer));
+  }
+  &__label{
+    display: flex;
+    cursor: pointer;
+    position: relative;
+  }
+  &__submited{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: 700;
   }
 }

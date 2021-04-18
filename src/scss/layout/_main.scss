@@ -6,6 +6,7 @@
   grid-template-columns: 50% 1fr;
   overflow: hidden;
   gap: 2*$spacer;
+  
   &__section{
     padding: $spacer;
   }
@@ -24,6 +25,11 @@
   }
   &__body{
     flex: 1;
+    padding: $spacer;
+    iframe{
+      width: 100%;
+      height: 100%;
+    }
   }
   &__footer{
     display: flex;
@@ -36,5 +42,5 @@
     display: flex;
     flex-direction: column;
     box-shadow: $box-shadow;
-  }
+  }  
 }

@@ -1,37 +1,40 @@
 /*FORM RANGE*/
-// scss-docs-start form-range-variables
-$form-range-track-width:          100% !default;
-$form-range-track-height:         .5rem !default;
-$form-range-track-cursor:         pointer !default;
-$form-range-track-bg:             $gray-300 !default;
-$form-range-track-border-radius:  1rem !default;
-$form-range-track-box-shadow:     $box-shadow-inset !default;
 
-$form-range-thumb-width:                   1rem !default;
-$form-range-thumb-height:                  $form-range-thumb-width !default;
-$form-range-thumb-bg:                      $component-active-bg !default;
-$form-range-thumb-border:                  0 !default;
-$form-range-thumb-border-radius:           1rem !default;
-$form-range-thumb-box-shadow:              0 .1rem .25rem rgba($black, .1) !default;
-$form-range-thumb-focus-box-shadow:        0 0 0 1px $body-bg, $input-focus-box-shadow !default;
-$form-range-thumb-focus-box-shadow-width:  $input-focus-width !default; // For focus box shadow issue in Edge
-$form-range-thumb-active-bg:               tint-color($component-active-bg, 70%) !default;
-$form-range-thumb-disabled-bg:             $gray-500 !default;
-$form-range-thumb-transition:              background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
-// scss-docs-end form-range-variables
 @import "~bootstrap/scss/forms/form-range";
-.form-range{
-  width: auto;
-  flex: 1;
+
+
+.form__range{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  .form-range{
+    width: auto;
+    flex: 1;
+  }  
+  &__input{
+    border: none;
+    margin-right: .75rem;
+    padding: .5rem;
+    max-width: 3rem;
+    border-right: 1px solid $gray-300;
+    &:focus{
+      outline: none;
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    &[type=number] {
+      -moz-appearance: textfield;
+  }
+  }
 }
 /*INPUT GROUP*/
 // scss-docs-start input-group-variables
-$input-group-addon-padding-y:           $input-padding-y !default;
-$input-group-addon-padding-x:           $input-padding-x !default;
-$input-group-addon-font-weight:         $input-font-weight !default;
-$input-group-addon-color:               $input-color !default;
 $input-group-addon-bg:                  none;
-$input-group-addon-border-color:        $input-border-color !default;
 // scss-docs-end input-group-variables
 
 @import "~bootstrap/scss/forms/input-group";
@@ -48,9 +51,14 @@ $input-group-addon-border-color:        $input-border-color !default;
 
   }
 }
-
-
-
-
 /*FORM CHECK*/
 @import "~bootstrap/scss/forms/form-check";
+
+/*FORM CONTROL*/
+@import "~bootstrap/scss/forms/form-control";
+textarea{
+  &.form-control{
+    border-radius: $spacer*1.5;
+    padding: $spacer/2 $spacer;
+  }
+}

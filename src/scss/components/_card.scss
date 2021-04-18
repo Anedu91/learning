@@ -1,6 +1,6 @@
 // scss-docs-start card-variables
 $card-spacer-y:                     .75*$spacer;
-$card-spacer-x:                     3.5*$spacer;
+$card-spacer-x:                     .75*$spacer;
 $card-border-width:                 0;
 $card-border-radius:                $spacer*1.5;
 // scss-docs-end card-variables
@@ -44,7 +44,7 @@ $card-border-radius:                $spacer*1.5;
   }
   &__action{
     border-top: 1px solid $primary;
-    padding: $spacer 2*$spacer 0;
+    padding: $spacer 0 0;
     
   }
   &__container{
@@ -53,6 +53,11 @@ $card-border-radius:                $spacer*1.5;
     &>*:not(:last-child){
       margin-right: $spacer;
     }
+  }
+  &__textarea{
+    margin-top: $spacer;
+    resize: none;
+    max-height: $spacer*7;
   }
 
   &.active{
@@ -96,6 +101,17 @@ $card-border-radius:                $spacer*1.5;
   &__btn[aria-expanded="true"] &__toggle{
     &:before{
       background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 2.9' fill='#{$white}'><rect x='0.1' y='0.1' width='17.7' height='2.7'/></svg>"));
+    }
+  }
+
+
+  &--feedback{
+    background: $primary;
+    color: $white;
+    padding: $spacer $spacer*1 $spacer*1;
+    @include media-breakpoint-up(xxl){
+      padding: $spacer $spacer*3 $spacer*2;
+
     }
   }
   

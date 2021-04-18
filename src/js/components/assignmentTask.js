@@ -26,7 +26,7 @@ export const assignmentTask = (assigment, index) => {
             </p>
           </div>
         </button>
-        <div class="collapse principal" id="task${index}">
+        <div class="collapse principal" id="task${assigment.id}">
           <div class="card-body">
             <div class="card__action">
               <div class="card__container">
@@ -34,9 +34,9 @@ export const assignmentTask = (assigment, index) => {
                 <button class="btn btn-primary btn-large btn-task" data-score=${assigment.possibleScore} data-possible=${assigment.possibleScore}>${assigment.possibleScore}</button>
               </div>
               <div class="mt-3 card__container">
-                <div class="input-group shadow">
-                  <span class="input-group-text">1</span>
-                  <input type="range" id="range-${index}" class="form-range" min="0" max="${assigment.possibleScore}" step="1" value="1"}>
+                <div class="input-group shadow form__range">
+                  <input class="form__range__input" type="number" value="1" min="0" max=${assigment.possibleScore} />
+                  <input type="range" id="range-${index}" class="form-range" min="0" max="${assigment.possibleScore}" step="1" value="1" />
                 </div>
                 <button class="btn btn-task btn-range" data-possible=${assigment.possibleScore} data-score="1">
                   <svg class="btn-icon"><use xlink:href="images/sprite.svg#icon-check"></use></svg>
